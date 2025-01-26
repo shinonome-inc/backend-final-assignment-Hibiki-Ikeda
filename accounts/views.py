@@ -17,7 +17,7 @@ class SignupView(CreateView):
         password = form.cleaned_data["password1"]
         # passwordではなくpassword1としないとkeyerror。
         # formのフィールドにpasswordというフィールドはないため。
-        user = authenticate(self.request, userame=username, password=password)
+        user = authenticate(self.request, username=username, password=password)
         # スペルミスに注意
         login(self.request, user)
         return response
